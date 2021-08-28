@@ -1,0 +1,64 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li ><a routerLink="/cinema" ><h4>Cinema</h4></a></li>
+    </ul>
+    <ul class="nav navbar-nav">
+      <li ><a routerLink=""><h4>Log Out</h4></a></li>
+    </ul>
+    <ul class="nav navbar-nav">
+      <li ><a routerLink="/ajouterfilm"><h4>Gestion des film</h4></a></li>
+    </ul>
+    <ul class="nav navbar-nav">
+      <li ><a routerLink="/listprojections"><h4>List des Projections</h4></a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container " >
+  <h3>Ajouter Film</h3>
+  <form (ngSubmit)="ajouterFilm()" >
+
+    <div class="form-group">
+      <label>Titre</label>
+      <input type="text" class="form-control" id="Titre"
+              name="Titre" [(ngModel)]="film.titre">
+    </div>
+
+    <div class="form-group">
+      <label>Description</label>
+      <input type="text" class="form-control" id="Description"
+             name="Description" [(ngModel)]="film.description">
+    </div>
+
+
+    <div class="form-group">
+      <label>Duree</label>
+      <input type="text" class="form-control" id="Duree"
+             name="Duree" [(ngModel)]="film.duree">
+    </div>
+
+    <div class="form-group">
+      <label>ID Categorie</label>
+      <input type="text" class="form-control" id="Categorie"
+             name="Categorie" [(ngModel)]="film.categorieId">
+    </div>
+
+    <div class="form-group">
+      <label>Realisateur</label>
+      <input type="text" class="form-control" id="Realisateur"
+             name="Realisateur" [(ngModel)]="film.realisateur">
+    </div>
+
+    <div>
+    <input type="file" (change)="onFileChanged($event)">
+    </div>
+
+    <button class="btn btn-success col-md-4" type="submit">Ajouter</button>
+  </form>
+</div>
+
+

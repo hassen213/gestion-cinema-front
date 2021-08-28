@@ -1,0 +1,49 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li ><a routerLink="/cinema" ><h4>Cinema</h4></a></li>
+    </ul>
+    <ul class="nav navbar-nav">
+      <li ><a routerLink=""><h4>Log Out</h4></a></li>
+    </ul>
+    <ul class="nav navbar-nav">
+      <li ><a routerLink="/ajouterfilm"><h4>Gestion des film</h4></a></li>
+    </ul>
+    <ul class="nav navbar-nav">
+      <li ><a routerLink="/listprojections"><h4>List des Projections</h4></a></li>
+    </ul>
+  </div>
+</nav>
+  <div class="container">
+    <div *ngIf="projections">
+
+    <h2>Projection list</h2>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Id de Projection</th>
+      <th>Date de Sceance</th>
+      <th>Nom Film</th>
+      <th>Prix de Proj</th>
+
+
+    </tr>
+    </thead>
+
+    <tbody >
+    <tr *ngFor="let proj of projections" >
+
+      <td>{{proj.id}}</td>
+      <td>{{proj.seance.heureDebut}}</td>
+      <td>{{proj.film.titre}}</td>
+      <td>{{proj.prix}} DH</td>
+
+    </tr>
+    </tbody>
+
+  </table>
+  </div>
+  </div>
