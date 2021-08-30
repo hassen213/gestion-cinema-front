@@ -9,8 +9,6 @@ import {Router} from "@angular/router";
   styleUrls: ['./ajouter-film.component.css']
 })
 export class AjouterFilmComponent implements OnInit {
-  imageName : any;
-  message : any;
   film = new Film();
 
   constructor(private _service: RegistrationService, private _router : Router) { }
@@ -31,11 +29,5 @@ export class AjouterFilmComponent implements OnInit {
     )
   }
 
-  onFileChanged($event: Event) {
 
-  }
-
-  onUpload() {
-
-  }
 }

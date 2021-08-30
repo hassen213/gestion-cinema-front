@@ -16,7 +16,6 @@ export class ListProjectionComponent implements OnInit {
 
   ngOnInit(): void {
     this.getProjection();
-    // this.getFilm();
 
   }
 
