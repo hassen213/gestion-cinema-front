@@ -40,18 +40,18 @@
             <div *ngFor="let s of salles._embedded.salles">
               <div class="col-md-6">
                 <div class="panel panel-default ">
-                  <div class="panel-heading " >{{s.name}}</div>
+                  <div class="panel-heading " >{{s.name}} : </div>
 
                   <div class="panel-body" *ngIf="s.projections">
                     <div class="row">
                       <div class="col-md-6">
                         <img class="col-md-8 " src="{{cinemasService.host+'/imageFilm/'+s.projections._embedded.projections[0].film.id}}">
                         </div>
-                      <div class="col-md-6" >
+                      <div class="col-md-12" >
                         <ul class="list-group">
                           <li class="list-group-item">Seances</li>
                           <li [ngClass]="p==currentProjection?'active':''"(click)="onGetTicketsPlaces(p)" *ngFor="let p of s.projections._embedded.projections" class="list-group-item clickable">
-                            {{p.seance.heureDebut}} => Prix : {{p.prix|number:'0.00'}} DH
+                            Le Film {{p.film.titre}} a {{p.seance.heureDebut}} => Prix : {{p.prix|number:'0.00'}} DH
                           </li>
                         </ul>
                       </div>

@@ -19,14 +19,23 @@ export class AjouterFilmComponent implements OnInit {
   ajouterFilm() {
     this._service.ajouterFilmFromRemote(this.film).subscribe(
       data => {
-        console.log("responce received")
-        this._router.navigate([''])
-      },
+        console.log(data)
+        this.goToCinema();
+        },
       error => {
         console.log("exception occured")
 
       }
     )
+  }
+
+  goToCinema(){
+    this._router.navigate(['/cinema'])
+  }
+
+  onSubmit(){
+    console.log(this.film);
+    this.ajouterFilm();
   }
 
 
